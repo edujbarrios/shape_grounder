@@ -11,6 +11,11 @@ from shapegrounder.config import ShapeGrounderConfig
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
 
+@app.callback()
+def _main() -> None:
+    """Geometry-first object shape analysis."""
+
+
 @app.command()
 def analyze(
     image_path: str,

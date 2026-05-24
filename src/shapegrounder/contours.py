@@ -21,7 +21,9 @@ def _contour_area(contour: np.ndarray) -> float:
 
 def extract_contours(image: np.ndarray, config: ShapeGrounderConfig) -> list[ContourGroup]:
     pre = preprocess_image(image, config)
-    contours, hierarchy = cv2.findContours(pre.edges, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+    # Use the binary mask instead of edges to avoid "double contours" created by Canny
+    # which can inflate hole measurements.
+    contours, hierarchy = cv2.findContours(pre.binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
 
     if hierarchy is None or len(contours) == 0:
         return []
