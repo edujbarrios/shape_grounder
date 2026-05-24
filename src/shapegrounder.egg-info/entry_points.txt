@@ -1,0 +1,2 @@
+[console_scripts]
+shapegrounder = shapegrounder.cli:app

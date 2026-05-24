@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/shapegrounder/__init__.py
+src/shapegrounder/py.typed
+src/shapegrounder.egg-info/PKG-INFO
+src/shapegrounder.egg-info/SOURCES.txt
+src/shapegrounder.egg-info/dependency_links.txt
+src/shapegrounder.egg-info/entry_points.txt
+src/shapegrounder.egg-info/requires.txt
+src/shapegrounder.egg-info/top_level.txt
+tests/test_smoke.py
